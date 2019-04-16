@@ -4,11 +4,10 @@
 package mx.dns.findreplacer
 
 class App {
-    String getGreeting() {
-        return 'Hello world.'
-    }
 
     static void main(String[] args) {
-        println new App().greeting
+      
+        def testFilePath = App.class.getClassLoader().getResource("test.txt").getFile()
+        FindReplacer.findReplace(testFilePath, "debe ser", "worked!!!")
     }
 }
